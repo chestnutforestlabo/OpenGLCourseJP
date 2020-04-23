@@ -2,7 +2,7 @@ title: OpenGL Course (JP)
 email: tatsy.mail@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   OpenGLの講義用資料です。シェーダを用いて対話的なCGプログラムを書くことを目標にしています。
-baseurl: "https://tatsy.github.io/OpenGLCourseJP"
+baseurl: "/OpenGLCourseJP"
 url: "https://tatsy.github.io"
 github_username: tatsy
 encoding: UTF-8
