@@ -5,6 +5,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/OpenGLCourseJP"
 url: "https://tatsy.github.io"
 github_username: tatsy
+encoding: UTF-8
+lang: ja
 
 # Build settings
 theme: minima
