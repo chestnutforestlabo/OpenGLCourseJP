@@ -3,17 +3,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>OpenGL Course (JP) | OpenGLの講義用資料です。シェーダを用いて対話的なCGプログラムを書くことを目標にしています。</title>
+<title>ウィンドウサイズの変更 | OpenGL Course (JP)</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="OpenGL Course (JP)" />
+<meta property="og:title" content="ウィンドウサイズの変更" />
 <meta property="og:locale" content="ja" />
 <meta name="description" content="OpenGLの講義用資料です。シェーダを用いて対話的なCGプログラムを書くことを目標にしています。" />
 <meta property="og:description" content="OpenGLの講義用資料です。シェーダを用いて対話的なCGプログラムを書くことを目標にしています。" />
-<link rel="canonical" href="https://tatsy.github.io/OpenGLCourseJP/404.html" />
-<meta property="og:url" content="https://tatsy.github.io/OpenGLCourseJP/404.html" />
+<link rel="canonical" href="https://tatsy.github.io/OpenGLCourseJP/window_resize/" />
+<meta property="og:url" content="https://tatsy.github.io/OpenGLCourseJP/window_resize/" />
 <meta property="og:site_name" content="OpenGL Course (JP)" />
 <script type="application/ld+json">
-{"description":"OpenGLの講義用資料です。シェーダを用いて対話的なCGプログラムを書くことを目標にしています。","@type":"WebPage","headline":"OpenGL Course (JP)","url":"https://tatsy.github.io/OpenGLCourseJP/404.html","@context":"https://schema.org"}</script>
+{"description":"OpenGLの講義用資料です。シェーダを用いて対話的なCGプログラムを書くことを目標にしています。","@type":"WebPage","headline":"ウィンドウサイズの変更","url":"https://tatsy.github.io/OpenGLCourseJP/window_resize/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/OpenGLCourseJP/assets/css/main.css">
   <script type="text/javascript" src="/OpenGLCourseJP/assets/js/jquery.min.js"></script>
@@ -77,26 +77,85 @@ MathJax = {
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 { 
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title">
+      ウィンドウサイズの変更
+      
+      <a href="https://github.com/tatsy/OpenGLCourseJP/blob/master/src/window_resizing/main.cpp" target="_blank" style="color: inherit;">
+        <span class="fab fa-github"></span>
+      </a>
+      
+    </h1>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  <div class="post-content">
+    <h2 id="単純な設定">単純な設定</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="github"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">resizeGL</span><span class="p">(</span><span class="n">GLFWwindow</span> <span class="o">*</span><span class="n">window</span><span class="p">,</span> <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ユーザ管理のウィンドウサイズを変更</span>
+    <span class="n">WIN_WIDTH</span> <span class="o">=</span> <span class="n">width</span><span class="p">;</span>
+    <span class="n">WIN_HEIGHT</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span>
+
+    <span class="c1">// GLFW管理のウィンドウサイズを変更</span>
+    <span class="n">glfwSetWindowSize</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">WIN_WIDTH</span><span class="p">,</span> <span class="n">WIN_HEIGHT</span><span class="p">);</span>
+
+    <span class="c1">// ビューポート変換の更新</span>
+    <span class="n">glViewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">renderBufferWidth</span><span class="p">,</span> <span class="n">renderBufferHeight</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h2 id="より高度な設定">より高度な設定</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="github"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">resizeGL</span><span class="p">(</span><span class="n">GLFWwindow</span> <span class="o">*</span><span class="n">window</span><span class="p">,</span> <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ユーザ管理のウィンドウサイズを変更</span>
+    <span class="n">WIN_WIDTH</span> <span class="o">=</span> <span class="n">width</span><span class="p">;</span>
+    <span class="n">WIN_HEIGHT</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span>
+
+    <span class="c1">// GLFW管理のウィンドウサイズを変更</span>
+    <span class="n">glfwSetWindowSize</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">WIN_WIDTH</span><span class="p">,</span> <span class="n">WIN_HEIGHT</span><span class="p">);</span>
+
+    <span class="c1">// 実際のウィンドウサイズ (ピクセル数) を取得</span>
+    <span class="kt">int</span> <span class="n">renderBufferWidth</span><span class="p">,</span> <span class="n">renderBufferHeight</span><span class="p">;</span>
+    <span class="n">glfwGetFramebufferSize</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">renderBufferWidth</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">renderBufferHeight</span><span class="p">);</span>
+
+    <span class="c1">// ビューポート変換の更新</span>
+    <span class="n">glViewport</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">renderBufferWidth</span><span class="p">,</span> <span class="n">renderBufferHeight</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">
