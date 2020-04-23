@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>GLMのインストール | OpenGL Course (JP)</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="GLMのインストール" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/OpenGLCourseJP/setup/glm/" />
+<meta property="og:url" content="http://localhost:4000/OpenGLCourseJP/setup/glm/" />
+<meta property="og:site_name" content="OpenGL Course (JP)" />
+<script type="application/ld+json">
+{"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebPage","url":"http://localhost:4000/OpenGLCourseJP/setup/glm/","headline":"GLMのインストール","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/OpenGLCourseJP/assets/css/main.css">
+  <link rel="stylesheet" href="/OpenGLCourseJP/assets/css/lightbox.min.css">
+  <link rel="stylesheet" href="/OpenGLCourseJP/assets/css/viewer.min.css">
+  <script type="text/javascript" src="/OpenGLCourseJP/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/OpenGLCourseJP/assets/js/lightbox.min.js"></script>
+  <script type="text/javascript" src="/OpenGLCourseJP/assets/js/viewer.min.js"></script>
+  <script type="text/javascript" src="/OpenGLCourseJP/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/OpenGLCourseJP/feed.xml" title="OpenGL Course (JP)" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/OpenGLCourseJP/">OpenGL Course (JP)</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <!-- <div class="trigger"><a class="page-link" href="/OpenGLCourseJP/about/">About</a><a class="page-link" href="/OpenGLCourseJP/setup/glad/">OpenGL 3.x/4.xのローダとGLMの設定</a><a class="page-link" href="/OpenGLCourseJP/setup/glew/">GLEWとGLMの設定</a><a class="page-link" href="/OpenGLCourseJP/setup/glfw/">GLFWの設定 (初回の設定)</a><a class="page-link" href="/OpenGLCourseJP/setup/glm/">GLMのインストール</a><a class="page-link" href="/OpenGLCourseJP/hello_shader/">シェーダの利用</a><a class="page-link" href="/OpenGLCourseJP/">HOME</a><a class="page-link" href="/OpenGLCourseJP/alpha_blending/">アルファ合成</a><a class="page-link" href="/OpenGLCourseJP/setup/makefile/">Makefileを用いたビルド</a><a class="page-link" href="/OpenGLCourseJP/open_window/">ウィンドウを開く</a><a class="page-link" href="/OpenGLCourseJP/open_window/">ウィンドウを開く</a><a class="page-link" href="/OpenGLCourseJP/setup/">環境設定</a></div> -->
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">GLMのインストール</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="glmのインストール-windowsの場合">GLMのインストール (Windowsの場合)</h2>
+
+<p>GLMも公式のウェブページからライブラリをダウンロードします。</p>
+
+<p><strong>GLMのダウンロードページ</strong> <br />
+<a href="http://glm.g-truc.net">http://glm.g-truc.net</a></p>
+
+<p><a class="lightbox-link" href="/OpenGLCourseJP/assets/images/setup/glm_top_page.jpg" data-lightbox="image-1" data-title=""><img src="/OpenGLCourseJP/assets/images/setup/glm_top_page.jpg" alt="" /></a></p>
+
+<p>上記のウェブページの左側にある「Downloads」というリンクをクリックします。するとダウンロードページに移動するので、その中から最新版である0.9.9.5をダウンロードします (2019年4月1日現在) 。ダウンロードしたファイルは「<code class="highlighter-rouge">glm-0.9.9.5.zip</code>」という名前になっているはずです。</p>
+
+<p><a class="lightbox-link" href="/OpenGLCourseJP/assets/images/setup/glm_download_page.jpg" data-lightbox="image-1" data-title=""><img src="/OpenGLCourseJP/assets/images/setup/glm_download_page.jpg" alt="" /></a></p>
+
+<p>ダウンロードが完了したら、ZIPファイルを展開して適当なディレクトリに配置します。</p>
+
+<h3 id="プロパティシートの更新">プロパティシートの更新</h3>
+
+<p>初回の準備の際に作成したプロパティシートを更新して、GLEWおよびGLMを使用できるようにします。設定方法に関しては「<a href="/OpenGLCourseJP/setup/glfw/">GLFWの設定</a>」を参照してください。設定項目は以下の通りです。</p>
+
+<p><strong>インクルードディレクトリ</strong> <br />
+<code class="highlighter-rouge">C:/Libraries/opengl/glm-0.9.x.x</code></p>
+
+<hr />
+
+<h2 id="glmのインストール-macの場合">GLMのインストール (Macの場合)</h2>
+
+<p><a href="https://github.com/g-truc/glm.git">GLMのGitHub</a> からソースコードをダウンロードして、ビルドとインストールを行います。次のコマンドをターミナルで実行してください。</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>git clone https://github.com/g-truc/glm.git
+<span class="nb">cd </span>glm
+<span class="nb">mkdir </span>build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
+cmake <span class="nt">-DBUILD_STATIC_LIBS</span><span class="o">=</span>OFF <span class="nt">-DBUILD_SHARED_LIBS</span><span class="o">=</span>OFF <span class="nt">-DGLM_TEST_ENABLE</span><span class="o">=</span>OFF ..
+make
+<span class="nb">sudo </span>make <span class="nb">install</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>これだけでインストールは完了です。</p>
+
+<p><em>2020年4月現在のGLMの最新版を使うと上記のCMakeを使う方法ではヘッダをインストールできないようです。代替案としてバージョン0.9.9.5を使うか<a href="https://brew.sh/index" target="_blank">Homebrew</a>などを使ってインストールすることもできます。</em></p>
+
+<h3 id="xcodeの設定">Xcodeの設定</h3>
+
+<p>Macの場合、上記のコマンドでGLMは<code class="highlighter-rouge">/usr/local/include</code>というシステム全体から見える場所にインストールされるため、Xcodeでインクルード・ディレクトリ等を設定する必要ありません。</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/OpenGLCourseJP/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">OpenGL Course (JP)</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">OpenGL Course (JP)</li><li><a class="u-email" href="mailto:tatsy.mail@gmail.com">tatsy.mail@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/tatsy"><svg class="svg-icon"><use xlink:href="/OpenGLCourseJP/assets/minima-social-icons.svg#github"></use></svg> <span class="username">tatsy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
