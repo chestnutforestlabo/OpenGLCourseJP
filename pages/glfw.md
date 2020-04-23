@@ -27,8 +27,8 @@ Visual Studioは現在Community版が無料で使用可能なので、そちら�
 
 GLFWの公式ページからコンパイル済みのライブラリをダウンロードします。
 
-**GLFWのダウンロードページ** <br/>
-[http://www.glfw.org/download.html](http://www.glfw.org/download.html)
+**GLFWのダウンロードページ** \\
+<http://www.glfw.org/download.html>{: target="_blank" }
 
 上記のウェブページを開いて、中央にある「Windows pre-compiled binaries」から、
 ライブラリをダウンロードします。こちらには32bitのものと64bitのものがありますが、
@@ -95,7 +95,7 @@ GLFWを使用するためには、プロジェクトの設定をする必要が�
 
 作成されたファイルを開き、以下のソースコードを入力します。内容に関しては、後の章で解説をします。
 
-{% highlight c++ linenos %}
+```c++
 #include <cstdio>
 #include <GLFW/glfw3.h>
 
@@ -147,7 +147,7 @@ int main(int argc, char **argv) {
         glfwPollEvents();
     }
 }
-{% endhighlight %}
+```
 
 特に問題がなければ、「Ctrl+Shift+B」を押すことでビルドが成功するはずです。プログラムは「Ctrl+F5」で実行でき、成功すると赤いウィンドウが表示されるはずです。
 
@@ -174,14 +174,14 @@ XcodeのインストールはApp Storeから行います。App Storeを開き、
 MacOSの場合には、GLFWをソースコードからコンパイルしてインストールする必要があります。
 「ターミナル」を開いて、以下のスクリプトを1行1行実行していきます。
 
-{% highlight shell linenos %}
+```shell
 git clone https://github.com/glfw/glfw.git    # ソースコードのダウンロード
 cd glfw                                       # ダウンロードしたソースのディレクトリに移動
 mkdir build && cd build                       # ビルド用のディレクトリを作成して、そこに移動
 cmake ..                                      # CMakeを利用したビルドの準備
 make                                          # ビルド
 sudo make install                             # インストール
-{% endhighlight %}
+```
 
 上記のインストール方法を使う場合にはGit, CMake, GNU Makeがインストールされている必要があります。
 通常、MacBook等を購入した段階でGitとGNU Makeはインストールされているはずですが、

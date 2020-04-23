@@ -2,6 +2,8 @@
 ---
 
 @import "minima";
+@import "github.css";
+@import "lightbox.min.css";
 
 $accent_color: #d14;
 $gray_color: #f8f8f8;
@@ -27,7 +29,7 @@ body {
     }
 
     h2 {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         font-weight: bold;
         font-size: 1.5rem;
     }
@@ -68,13 +70,16 @@ body {
 
     hr {
         margin-top: 2rem;
-        border: 1px solid #bbb;
+        border: 1px solid rgba(128, 128, 128, 0.2);
         border-top: none;
     }
     
     /* Images */
     a.lightbox-link {
-        img { width: 50%; }
+        img { 
+            width: 50%;
+            border: 1px solid rgba(128, 128, 128, 0.2);
+        }
     }
 
     /* Source code */
@@ -93,13 +98,19 @@ body {
         &.highlight {
             padding: 10px;
         }
+
         &.lineno {
             text-align: right;
             padding: 0px 5px;
         }
+
         &.rouge-table {
             width: auto;
         }
+    }
+
+    table {
+        p { margin: 0px; }
     }
     
     table.rouge-table {
@@ -109,14 +120,44 @@ body {
         td {
             border: 0px;
 
-            &.gutter.gl {
-                padding: 0px 10px;
+            &.rouge-gutter {
+                width: 1px;
+                padding: 0px 5px;
+                border-right: 1px #ddd solid;
+            }
+            
+            &.rouge-code {
+                padding-left: 15px;
+            }
+
+            &.gutter {
+                width: 1px;
+                padding: 0px 5px;
                 border-right: 1px #ddd solid;
             }
             
             &.code {
                 padding-left: 15px;
             }
+
+        }
+    }
+
+    .source-name {
+        font-size: 0.9rem;
+        font-style: normal;
+        padding: 2x;
+        margin: 0px;
+        background-color: #bbdde9;
+        color: #3b3b3b;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        margin-bottom: 0px;
+        padding-left: 1em;
+        border-left: 0px;
+
+        p {
+            margin-bottom: 0rem !important;
         }
     }
 }

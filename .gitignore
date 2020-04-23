@@ -1,4 +1,7 @@
+.vscode/*
+
 .jekyll-cache
 Gemfile.lock
+_site/*
 
 .DS_Store
